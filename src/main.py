@@ -2,11 +2,11 @@ import pandas
 from database import users
 from database import commands
 from functions import validate_account
+commands = commands()
 
 def main():
 	users_df = users()
 	User = validate_account(users_df = users_df)
-	commands = commands()
 
 	if User != 'none':
 		print(f'your subscription is {User.subscription}')
