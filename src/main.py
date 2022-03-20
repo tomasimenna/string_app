@@ -15,7 +15,7 @@ def main():
 			cmd = str(input('Command:'))
 			if User.subscription == 'no-verified':
 				print('You are still not verified. You cannot use commands until you finish the verification')
-			elif User.subscription == 'basic' and commands[cmd] == 'pro':
+			elif User.subscription == 'basic' and commands.get(cmd, 'not found') == 'pro':
 				print('Upgrade your version to use this command')
 			else:
 				User.execute_command(cmd)
